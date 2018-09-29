@@ -31,11 +31,11 @@
             <div class="form-group">
                 <h1>About You</h1>
                 <label for="formGroupExampleInput">Name (Required)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+                <input type="text" class="form-control" id="formGroupExampleInput userName" placeholder="Name">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Link to Photo Image (Required)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="LastName">
+                <input type="text" class="form-control" id="formGroupExampleInput2 userPhoto" placeholder="LastName">
             </div>
         </form>
 
@@ -51,7 +51,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q1">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -72,7 +72,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q2">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -93,7 +93,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q3">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -114,7 +114,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q4">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -135,7 +135,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q5">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -156,7 +156,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q6">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -177,7 +177,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q7">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -198,7 +198,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q8">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -220,7 +220,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q9">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -242,7 +242,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-auto my-1">
                         <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect q10">
                             <option selected>Choose...</option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -257,13 +257,52 @@
 
 
                 <div class="col-auto my-1">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
                 </div>
             
 
         </form>
     </div>
 
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+
+//add click function so input options are stored upon the click of the submit button
+        $("#submit").on('click', function(event){
+
+            event.preventDefault();  //prevent default click action
+            var userInput = {
+                name: $("userName").val().trim(),
+                photo: $("userPhoto").val().trim(),
+                selections: [ 
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim(),
+
+
+                ]
+
+
+
+            }
+
+        });
+
+
+
+
+    })
+
+    
+    </script>
 
 
 

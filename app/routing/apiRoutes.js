@@ -8,7 +8,11 @@ module.exports = function (app){
 
     app.get("api/friends.js", function(res, req){
 
-        res.json(friendData);
+        //create variable to capture input from new survery results
+        // var newFriend = req.body;
+
+
+        // res.json(friendData);
 
     });
 
