@@ -21,7 +21,7 @@ module.exports = function(app){
         
         
 
-        // const responses = userInput.scores;
+        const responses = userInput.scores;
 
 
         let matchName = "";
