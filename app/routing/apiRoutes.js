@@ -19,23 +19,27 @@ module.exports = function (app){
 
     app.post("/api/friends", function(req, res){
 
+        
         var userInput = req.body;
+        friends.push(userInput);
 
-        var responses = userInput.selections;
+        var responses = userInput.scores;
 
 
         var matchName = "";
         var matchPhoto = "";
-        var totalDiff = 50;
+
+
+        var totalDifference = 50;
         
 
         for (var i = 0; i < friends.length; i++){
 
-            var diff = 0;
+            var difference = 0;
 
         for (var j = 0; j < responses.length; j++)   {
 
-            diff += Math.abs(friends[i].selections[j] - responses[j]);
+            difference += Math.abs(friends[i].scores[j] - responses[j]);
 
         }
         
@@ -43,15 +47,16 @@ module.exports = function (app){
 
         
 
-        if (diff < totalDiff) {
+        if (difference < totalDifference) {
 
-            totalDiff = diff;
+            totalDifference = difference;
             matchName = friends[i].name;
             matchPhoto = friends[i].photo;
         }
     }
 
-        friends.push(userInput);
+        
+        // res.json(true);
 
         res.json({status: "Ok", matchName: matchName, matchPhoto: matchPhoto});
     });
