@@ -10,26 +10,29 @@
         crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
 </head>
 
 <body>
 
-        <div class="container-fluid">
-            <div class="jumbotron jumbotron-fluid">
-        
-                <h1 class="display-4">Friend Finder</h1>
-                <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
-            </div>
+    <div class="container-fluid">
+        <div class="jumbotron jumbotron-fluid">
+
+            <h1 class="display-4">Friend Finder</h1>
+            <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
         </div>
+    </div>
 
     <div class="container">
         <form>
             <div class="form-group">
-                <h1>About You</h1>
+                <h2>About You</h2>
                 <label for="formGroupExampleInput">Name (Required)</label>
                 <input type="text" class="form-control" id="formGroupExampleInput userName" placeholder="Name">
             </div>
@@ -256,55 +259,91 @@
 
 
 
-                <div class="col-auto my-1">
-                    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                </div>
-            
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </div>
+
 
         </form>
     </div>
 
-    <script type="text/javascript">
-    
-    $(document).ready(function(){
+    <!-- <footer class="footer"></footer> -->
 
-//add click function so input options are stored upon the click of the submit button
-        $("#submit").on('click', function(event){
+    <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h2 class="modal-title">
+                <strong>Best Match</strong>
+
+            </h2>
+        </div>
+        <div class="modal-body">
+            <h2 id="match-name"></h2>
+            <img id="match-img" src="#" alt>
+    
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>    
+    </div>
+
+
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        
+
+        $("#submit").on('click', function (event) {
 
             event.preventDefault();  //prevent default click action
+            
+            
+            //create variale to stored inputs and selected values
             var userInput = {
-                name: $("userName").val().trim(),
-                photo: $("userPhoto").val().trim(),
-                selections: [ 
-                    $("#q1").val().trim(),
-                    $("#q2").val().trim(),
-                    $("#q3").val().trim(),
-                    $("#q4").val().trim(),
-                    $("#q5").val().trim(),
-                    $("#q6").val().trim(),
-                    $("#q7").val().trim(),
-                    $("#q8").val().trim(),
-                    $("#q9").val().trim(),
-                    $("#q10").val().trim(),
-
-
+                name: $("#userName").val(),
+                photo: $("#userPhoto").val(),
+                selections: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
                 ]
 
+            };
+
+            // console.log(userInput);
+
+            //posting userInput to Friends Arrray
+            $.post("/api/friends", userInput, function(data) {
+
+            
+
+                $('#match-name').text(data.name);
+                $("#match-img").attr("src", data.photo);
+
+                $('#results-modal').modal('toggle');
 
 
-            }
+               
+            });
 
         });
 
-
-
-
-    })
-
-    
     </script>
-
-
 
 </body>
 
