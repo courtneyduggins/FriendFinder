@@ -29,10 +29,11 @@ module.exports = function(app){
 
 
         let totalDifference = 50;
-        
+
+                
         console.log(responses);
 
-        for (let i = 0; i < friends[0].scores.length; i++){
+        for (let i = 0; i < friends[i].scores[i].length; i++){
 
             let difference = 0;
 
