@@ -52,6 +52,8 @@ module.exports = function(app){
             totalDifference = difference;
             matchName = friends[i].name;
             matchPhoto = friends[i].photo;
+
+            // console.log(matchName + " " + matchPhoto);
         }
     }
 
